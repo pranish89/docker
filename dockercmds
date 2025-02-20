@@ -1,0 +1,45 @@
+docker --help
+
+docker ps
+
+
+docker ps -a
+
+
+docker images
+
+
+docker pull nginx
+
+
+docker run nginx
+
+
+docker run -d nginx
+
+
+docker run -d --name nginx -p 8087:80 nginx
+
+curl http://localhost:8087
+
+
+docker ps
+
+docker stop <conatinerid>
+
+docker rm <containerid>
+
+docker run -d --name nginx2 -p8087:80 -v ./mytest/:/usr/share/nginx/html nginx
+
+curl http://localhost:8087/file1.html
+
+cd mytest
+
+EDIT file1.html
+
+curl http://localhost:8087/file1.html
+
+
+
+
+
