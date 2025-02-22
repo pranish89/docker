@@ -29,7 +29,7 @@ docker stop <conatinerid>
 
 docker rm <containerid>
 
-docker run -d --name nginx2 -p8087:80 -v ./mytest/:/usr/share/nginx/html nginx
+docker run --privileged  -d  -p8087:80 -v ./mytest/:/usr/share/nginx/html nginx
 
 curl http://localhost:8087/file1.html
 
