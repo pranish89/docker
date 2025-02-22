@@ -21,7 +21,7 @@ docker run -d nginx
 docker run -d --name nginx -p 8087:80 nginx
 
 curl http://localhost:8087
-
+  
 
 docker ps
 
@@ -54,7 +54,7 @@ cd /PATH on volume and creat a file file1 with some content
 echo "hello" > file1
 
 
-docker run -d vol1:/usr.share/nginx/html  nginx
+docker run -d -v vol1:/usr.share/nginx/html  nginx
 
 docker ps
 
