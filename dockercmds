@@ -39,6 +39,38 @@ EDIT file1.html
 
 curl http://localhost:8087/file1.html
 
+####
+
+docker volume ls
+
+docker volume create vol1
+
+docker volume ls
+
+docker volume inspect vol1
+
+cd /PATH on volume and creat a file file1 with some content
+
+echo "hello" > file1
+
+
+docker run -d vol1:/usr.share/nginx/html  nginx
+
+docker ps
+
+docker exec -it <containerid> sh
+#cd /usr/share/nginx/hmtl
+#ls
+#cat file1
+
+
+
+
+####docker HUB account creation####
+pull and push images to docker hub
+
+
+
 
 
 
