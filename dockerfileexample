@@ -1,0 +1,10 @@
+FROM nginx:latest
+
+# Copy the custom HTML page into the container
+COPY custom.html /usr/share/nginx/html/index.html
+
+# Expose port 80 for the web server
+EXPOSE 80
+
+# Set the default command to run when the container starts
+CMD ["nginx", "-g", "daemon off;"]
