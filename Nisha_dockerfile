@@ -36,3 +36,5 @@ in worker--> docker swarm join --token<token> --addr<managerip>:2377
 docker service create --name myservice --publish published=8080,target=80 --replicas=2 --mount source=myvolume,target=/usr/local <dockerhubimage>
 docker servive ls
 docker service ps myservice
+
+scp token edureka@ipaddr: /tmp
