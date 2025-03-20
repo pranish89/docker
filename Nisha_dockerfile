@@ -7,3 +7,32 @@ COPY./website/ /usr/local/apache2/htdocs
 # Expose port 80
 EXPOSE 80
 
+docker build -t mywebsite
+docker run -d -p 8080:80 --name mycontainerwebsite mywebsite
+
+docker-compose.yaml
+version:"3.9"
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+     ports:
+       - :8080:80"
+       container-name: mycontainerwebsite
+     volumes:
+      - myvolume: /usr/local/apache2
+  volumes
+     myvolume:
+      driver:local
+      external:true
+
+docker volume create myvolume
+docker volume inspect myvolume
+sudo chmod g+w mountpath
+Docker Swarm:
+docker swarm init --advertise-addr <manager ip>
+in worker--> docker swarm join --token<token> --addr<managerip>:2377
+docker service create --name myservice --publish published=8080,target=80 --replicas=2 --mount source=myvolume,target=/usr/local <dockerhubimage>
+docker servive ls
+docker service ps myservice
