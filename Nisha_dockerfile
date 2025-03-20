@@ -1,0 +1,9 @@
+#use the official httpd image
+FROM httpd:latest
+
+# Copy the website file into httpd root
+COPY./website/ /usr/local/apache2/htdocs
+
+# Expose port 80
+EXPOSE 80
+
